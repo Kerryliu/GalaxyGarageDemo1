@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Galaxy Garage" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <% unless owner_signed_in? %>
+      <%= render partial: "shared/navigation" %>
+    <% else %>
+      <%= link_to "Logout", destroy_owner_session_path, method: :delete %>
+    <% end %>
+    <% flash.each do |key, msg| %>
+      <div data-alert class="alert-box success radius <%= key %>">
+        <%= content_tag :div, msg %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Galaxy Garage" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <%= render partial: "shared/navigation"%>
+    <% flash.each do |key, msg| %>
+      <div data-alert class="alert-box success radius <%= key %>">
+        <%= content_tag :div, msg %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
+
+    <div class="callout large">
+      <div class="row column text-center">
+        <h1>Galaxy Garage</h1>
+        <p class="lead">Business Without Boundaries, the Future of Parking</p>
+        <%= link_to "Reserve A Spot", new_reservation_path, class: "button large"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-6 columns medium-push-6">
+        <img class="thumbnail" src="http://placehold.it/750x350">
+      </div>
+      <div class="medium-6 columns medium-pull-6">
+        <h2>The Possibilities are Infinite</h2>
+        <p>.Galaxy Garages is the imagination at work. We are driving the parking garage revolution with a fully automated system that is setting the standards far above par. Our technological advance system gives you the power to maximize occupancy and profit using a fast, secure system. Get more out of now, choose Galaxy Garages and be apart of the finest innovation and excellence.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-4 columns">
+        <h3>Innovation</h3>
+        <p>Here at Galaxy Garages, we are empowered by innovation. We use the latest technologies to provide simple, easy to implement solutions to the worlds most complicated problems!</p>
+      </div>
+      <div class="medium-4 columns">
+        <h3>Quick Response</h3>
+        <p>We believe in quick, reliable technological solutions that not just work, but take control and deliver astonishing results. This is why Galaxy Garages has chosen to use QR codes in all of our garage systems. QR codes offer fast readability, and great encryption capabilities. </p>
+      </div>
+      <div class="medium-4 columns">
+        <h3>Excellence</h3>
+        <p>We strive to offer state-of-the-art systems with the best technologies and reliability. Our systems are guaranteed to exponentially increase the performance of traditional parking garages!</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row column">
+      <ul class="vertical medium-horizontal menu expanded text-center">
+        <li><a href="#"><div class="stat">804</div><span>Customers</span></a></li>
+        <li><a href="#"><div class="stat">170</div><span>Galaxy Garages</span></a></li>
+        <li><a href="#"><div class="stat">95</div><span>Featured</span></a></li>
+        <li><a href="#"><div class="stat">741</div><span>Recommendations</span></a></li>
+        <li><a href="#"><div class="stat">50</div><span>Offices</span></a></li>
+      </ul>
+    </div>
+    <hr>
+    <div class="row column">
+      <h3>Our Recent Work</h3>
+    </div>
+    <div class="row medium-up-3 large-up-4">
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+      <div class="column">
+        <img class="thumbnail" src="http://placehold.it/550x550">
+      </div>
+    </div>
+    <hr>
+    <div class="row column">
+      <ul class="menu">
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li><a href="#">Four</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

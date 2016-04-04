@@ -1,0 +1,23 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text"><%= link_to "Galaxy Garage", root_path %></li>
+      <% if customer_signed_in? %>
+        <li><%= link_to "Reserve", new_reservation_path %></li>
+        <li><%= link_to "View Reservations", reservations_path %></li>
+      <% end %>
+      <% if owner_signed_in? %>
+        <li><%= link_to "Reserve", new_reservation_path %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <% if customer_signed_in? %>
+        <li><%= link_to "log out (customer)", destroy_customer_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign In (customer)", new_customer_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
